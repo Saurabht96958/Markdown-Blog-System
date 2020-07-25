@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+     <h1>Blog Articles</h1>
+     <nav class="navbar navbar-expand-sm bg-dark mb-4">
+
+       <!-- Links -->
+       <ul class="navbar-nav">
+         <li class="nav-item">
+           <a class="nav-link" href="/all">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="/login">Login</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="/signup">SignUp</a>
+         </li>
+       </ul>
+     </nav>
+
+     <% articles.forEach(article => { %>
+      <div class="card mt-4">
+         <div class="card-body">
+           <h4 class="card-title"><%= article.title %></h4>
+           <div class="card-subtitle text-muted mb-2"><%= article.createdAt %></div>
+           <div class="card-text   mb-2"><%= article.description %></div>
+           <a class="btn btn-primary" href="/readmore/<%=article.id %>">Read more</a>
+
+           <form action="/delete/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+
+         </div>
+      </div>
+     <% }) %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Post</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+     <h1>New Articles</h1>
+     <% if(data) { %>
+       <div class="alert alert-danger">
+         <%= data %>
+       </div>
+     <%}%>
+     <form class="mt-4" action="/new" method="post">
+       <div class="form-group">
+         <label for="title">Title</label>
+         <input type="text" name="title" class="form-control" value="<%=title%>">
+       </div>
+       <div class="form-group">
+         <label for="description">Description</label>
+        <textarea name="description"  class="form-control"><%= description %></textarea>
+       </div>
+       <div class="form-group">
+         <label for="markdown">Markdown</label>
+         <textarea name="markdown" class="form-control"><%= markdown %></textarea>
+       </div>
+       <button type="submit" class="btn btn-success">Save</button>
+       <a href="/dashboard" class="btn btn-secondary">Cancel</a>
+     </form>
+    </div>
+  </body>
+</html>

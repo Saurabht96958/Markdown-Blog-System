@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-1"><%= article.title %></h1>
+        <div class="text-muted mb-2">
+            <%= article.createdAt %>
+        </div>
+        <a href="/all" class="btn btn-secondary">All Articles</a>
+        <!-- <a href="/edit/<%= article.id %>" class="btn btn-info">Edit</a> -->
+        <div class="mt-4">
+            <%- article.markdown %>
+        </div>
+    </div>
+  </body>
+</html>
